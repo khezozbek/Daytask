@@ -1,0 +1,31 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tasks</title>
+</head>
+<body>
+
+
+{% for task in tasks %}
+  <div class="task">
+    <span>{{ task.title }}</span>
+    <span>{{ task.time }}</span>
+  </div>
+{% endfor %}
+
+<!-- Notification area -->
+{% for notification in notifications %}
+    <div class="notification">{{ notification }}</div>
+{% empty %}
+    <p>No notifications at the moment.</p>
+{% endfor %}
+<script src="{% static 'js/main.js' %}"></script>
+
+
+</body>
+</html>
